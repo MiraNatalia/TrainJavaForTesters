@@ -7,8 +7,8 @@ public class ContactCreationTest extends TestBase {
   
   @Test
   public void testNonEmptyContactCreation() throws Exception {
-	openMainPage();
-    openAddNewContactPage();
+	app.navigationHelper.openMainPage();
+    app.contactHelper.openAddNewContactPage();
     ContactData contact = new ContactData();
     contact.firstName = "FirstNameA";
     contact.lastName = "LastNameA";
@@ -23,9 +23,9 @@ public class ContactCreationTest extends TestBase {
     contact.contactGroup = "Group 1";
     contact.address2 = "CountrayA1,CityA1,StreetA1 1, Appartment1";
     contact.mobilePhone2 = "+ 7 919 2222222";
-    fillContactForm(contact);
-    submitContactForm();
-    returnToHomePage();
+    app.contactHelper.fillContactForm(app, this, contact);
+    app.contactHelper.submitContactForm();
+    app.groupHelper.returnToHomePage();
   }
   
   

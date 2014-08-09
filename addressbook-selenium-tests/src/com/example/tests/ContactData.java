@@ -1,5 +1,6 @@
 package com.example.tests;
 
+
 public class ContactData {
 	public String firstName;
 	public String lastName;
