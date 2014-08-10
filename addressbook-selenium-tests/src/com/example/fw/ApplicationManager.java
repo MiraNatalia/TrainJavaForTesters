@@ -1,77 +1,56 @@
 package com.example.fw;
 
-import static org.junit.Assert.fail;
-
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
-
 public class ApplicationManager {
-	
-	public static WebDriver driver;
-	public static String baseUrl;
-	public static boolean acceptNextAlert = true;
-	private static StringBuffer verificationErrors = new StringBuffer();
-	
-	public NavigationHelper navigationHelper;
-	public GroupHelper groupHelper;
-	public ContactHelper contactHelper;
-	
-	public ApplicationManager () {
-	
+
+	public WebDriver driver;
+	public String baseUrl;
+
+	private NavigationHelper navigationHelper;
+	private GroupHelper groupHelper;
+	private ContactHelper contactHelper;
+
+	public ApplicationManager() {
+
 		driver = new FirefoxDriver();
-	    baseUrl = "http://localhost/";
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		baseUrl = "http://localhost/";
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		// this is a reference to this object(object in which helpers are
+		// created)
 
 	}
 
-	public boolean isElementPresent(By by) {
-	    try {
-	      driver.findElement(by);
-	      return true;
-	    } catch (NoSuchElementException e) {
-	      return false;
-	    }
-	  }
-
-	public boolean isAlertPresent() {
-	    try {
-	      driver.switchTo().alert();
-	      return true;
-	    } catch (NoAlertPresentException e) {
-	      return false;
-	    }
-	  }
-
-	public String closeAlertAndGetItsText() {
-	    try {
-	      Alert alert = driver.switchTo().alert();
-	      String alertText = alert.getText();
-	      if (acceptNextAlert) {
-	        alert.accept();
-	      } else {
-	        alert.dismiss();
-	      }
-	      return alertText;
-	    } finally {
-	      acceptNextAlert = true;
-	    }
-	  }
-
 	public void stop() {
 		driver.quit();
-	    String verificationErrorString = verificationErrors.toString();
-	    if (!"".equals(verificationErrorString)) {
-	      fail(verificationErrorString);
-	    }
-		
+
+	}
+
+	public NavigationHelper getNavigationHelper() {
+		if (navigationHelper == null) {
+			navigationHelper = new NavigationHelper(this);
+		}
+
+		return navigationHelper;
+	}
+
+	public GroupHelper getGroupHelper() {
+		if (groupHelper == null) {
+			groupHelper = new GroupHelper(this);
+		}
+
+		return groupHelper;
+	}
+
+	public ContactHelper getContactHelper() {
+		if (contactHelper == null) {
+			contactHelper = new ContactHelper(this);
+		}
+
+		return contactHelper;
 	}
 
 }

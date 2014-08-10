@@ -11,7 +11,7 @@
       </class> <!-- com.example.tests.GroupCreationTests -->
       <class name="com.example.tests.ContactCreationTest">
         <methods>
-          <include name="testEmptyContactCreation"/>
+          <include name="testNonEmptyContactCreation"/>
         </methods>
       </class> <!-- com.example.tests.ContactCreationTest -->
     </classes>
