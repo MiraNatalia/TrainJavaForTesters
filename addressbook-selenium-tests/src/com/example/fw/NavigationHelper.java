@@ -14,7 +14,7 @@ public class NavigationHelper extends HelperBase {
 	}
 
 	public void openGroupsPage() {
-		driver.findElement(By.linkText("groups")).click();
+		click(By.linkText("groups"));
 	}
 
 }
