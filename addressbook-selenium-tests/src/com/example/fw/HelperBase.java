@@ -69,7 +69,10 @@ public abstract class HelperBase {
 
 
 	protected void select(By locator, String inputText) {
-		new Select(driver.findElement(locator)).selectByVisibleText(inputText);
+		
+		if (inputText != null){
+			new Select(driver.findElement(locator)).selectByVisibleText(inputText);}
+		
 	}
 	
 	
