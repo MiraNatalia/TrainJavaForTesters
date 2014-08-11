@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8147" started-at="2014-08-11T19:27:13Z" finished-at="2014-08-11T19:27:21Z">
+  <suite name="Default suite" duration-ms="9450" started-at="2014-08-11T20:12:31Z" finished-at="2014-08-11T20:12:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8147" started-at="2014-08-11T19:27:13Z" finished-at="2014-08-11T19:27:21Z">
+    <test name="Default test" duration-ms="9450" started-at="2014-08-11T20:12:31Z" finished-at="2014-08-11T20:12:40Z">
       <class name="com.example.tests.ContactModificationTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.ContactModificationTest@751b1e07]" name="setUp" is-config="true" duration-ms="5984" started-at="2014-08-11T22:27:13Z" finished-at="2014-08-11T22:27:19Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.ContactModificationTest@33f724c7]" name="setUp" is-config="true" duration-ms="6418" started-at="2014-08-11T23:12:31Z" finished-at="2014-08-11T23:12:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="modifySomeContact()[pri:0, instance:com.example.tests.ContactModificationTest@751b1e07]" name="modifySomeContact" duration-ms="1888" started-at="2014-08-11T22:27:19Z" finished-at="2014-08-11T22:27:21Z">
+        <test-method status="PASS" signature="modifySomeContactViaDetails()[pri:0, instance:com.example.tests.ContactModificationTest@33f724c7]" name="modifySomeContactViaDetails" duration-ms="1835" started-at="2014-08-11T23:12:37Z" finished-at="2014-08-11T23:12:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- modifySomeContact -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.ContactModificationTest@751b1e07]" name="tearDown" is-config="true" duration-ms="258" started-at="2014-08-11T22:27:21Z" finished-at="2014-08-11T22:27:21Z">
+        </test-method> <!-- modifySomeContactViaDetails -->
+        <test-method status="PASS" signature="modifySomeContactViaEdit()[pri:0, instance:com.example.tests.ContactModificationTest@33f724c7]" name="modifySomeContactViaEdit" duration-ms="1066" started-at="2014-08-11T23:12:39Z" finished-at="2014-08-11T23:12:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- modifySomeContactViaEdit -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.ContactModificationTest@33f724c7]" name="tearDown" is-config="true" duration-ms="110" started-at="2014-08-11T23:12:40Z" finished-at="2014-08-11T23:12:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

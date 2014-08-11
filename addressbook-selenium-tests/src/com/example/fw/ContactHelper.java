@@ -57,9 +57,18 @@ public class ContactHelper extends HelperBase {
 
 	}
 
-	public void modifyContact() {
+	public void updateContact() {
 		click(By.name("update"));
 
+	}
+
+	public void initDetailsContact(int index) {
+		click(By.xpath("(//img[@alt='Details'])[" + index + "]"));
+
+	}
+
+	public void modifyContact() {
+		click(By.name("modifiy"));		
 	}
 
 }

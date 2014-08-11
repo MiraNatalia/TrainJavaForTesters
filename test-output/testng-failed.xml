@@ -6,8 +6,8 @@
       <class name="com.example.tests.ContactModificationTest">
         <methods>
           <include name="tearDown"/>
+          <include name="modifySomeContactViaDetails"/>
           <include name="setUp"/>
-          <include name="modifySomeContact"/>
         </methods>
       </class> <!-- com.example.tests.ContactModificationTest -->
     </classes>
