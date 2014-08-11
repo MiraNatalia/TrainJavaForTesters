@@ -38,30 +38,28 @@ public class ContactHelper extends HelperBase {
 	}
 
 	public void deleteContact(int index) {
-		
-		//click edit pic at home page to initiate contact edition
+
+		// click edit pic at home page to initiate contact edition
 		initEditContact(index);
-		
-		//xPath for Delete button
+
+		// xPath for Delete button
 		click(By.xpath("(//input[@name='update'])[2]"));
 
 	}
 
 	public void initEditContact(int index) {
-		click(By.xpath("//img[@alt='Edit'][" + index + "]"));
-        
+		click(By.xpath("(//img[@alt='Edit'])[" + index + "]"));
+
 	}
 
-	
 	public void returnToHomePage() {
 		click(By.linkText("home page"));
 
 	}
 
-	public void modifyContact() {	
+	public void modifyContact() {
 		click(By.name("update"));
 
-		
 	}
 
 }
