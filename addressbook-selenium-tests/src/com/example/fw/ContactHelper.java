@@ -1,6 +1,10 @@
 package com.example.fw;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import com.example.tests.ContactData;
 
@@ -48,7 +52,7 @@ public class ContactHelper extends HelperBase {
 	}
 
 	public void initEditContact(int index) {
-		click(By.xpath("(//img[@alt='Edit'])[" + index + "]"));
+		click(By.xpath("(//img[@alt='Edit'])[" + (index +1) + "]"));
 
 	}
 
@@ -68,7 +72,38 @@ public class ContactHelper extends HelperBase {
 	}
 
 	public void modifyContact() {
-		click(By.name("modifiy"));		
+		click(By.name("modifiy"));
+	}
+
+	public List<ContactData> getContactsOnPage() {
+		List<ContactData> contactsOpPage = new ArrayList<ContactData>();
+
+		List<WebElement> edits = driver.findElements(By
+				.xpath("//img[@alt='Edit']"));
+
+		int size = edits.size();
+
+		for (int index = 0; index < size; index++) {
+			initEditContact(index);
+
+			WebElement contactFirstNameOnPage;
+			WebElement contactLastNameOnPage;
+			contactFirstNameOnPage = driver.findElement(By.name("firstname"));
+			contactLastNameOnPage = driver.findElement(By.name("lastname"));
+
+			String firstName = contactFirstNameOnPage.getAttribute("value");
+			String lastName = contactLastNameOnPage.getAttribute("value");
+
+			ContactData contact = new ContactData();
+			contact.firstName = firstName;
+			contact.lastName = lastName;
+			contactsOpPage.add(contact);
+
+			click(By.linkText("home"));
+
+		}
+
+		return contactsOpPage;
 	}
 
 }
