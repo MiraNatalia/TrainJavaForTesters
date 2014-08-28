@@ -9,6 +9,7 @@ public class ApplicationManager {
 	public WebDriver driver;
 	public String baseUrl;
 
+	//hires helpers
 	private NavigationHelper navigationHelper;
 	private GroupHelper groupHelper;
 	private ContactHelper contactHelper;
@@ -19,9 +20,6 @@ public class ApplicationManager {
 		baseUrl = "http://localhost/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		// this is a reference to this object(object in which helpers are
-		// created)
-
 	}
 
 	public void stop() {
@@ -29,6 +27,7 @@ public class ApplicationManager {
 
 	}
 
+	//lazy initialization - App. Manager creates Navigation Helper for himself and sends him a reference on himself
 	public NavigationHelper getNavigationHelper() {
 		if (navigationHelper == null) {
 			navigationHelper = new NavigationHelper(this);
