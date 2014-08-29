@@ -12,19 +12,19 @@ public class RandomString {
 
 		// add valid symbols
 
-		tmp.append("~");
-		tmp.append("@");
-		tmp.append("#");
-		tmp.append("$");
-		tmp.append("%");
-		tmp.append("^");
-		tmp.append("-");
-		tmp.append("(");
-		tmp.append(")");
-		tmp.append("{");
-		tmp.append("}");
-		// tmp.append("'");
-		tmp.append("`");
+//		tmp.append("~");
+//		tmp.append("@");
+//		tmp.append("#");
+//		tmp.append("$");
+//		tmp.append("%");
+//		tmp.append("^");
+//		tmp.append("-");
+//		tmp.append("(");
+//		tmp.append(")");
+//		tmp.append("{");
+//		tmp.append("}");
+//		// tmp.append("'");
+//		tmp.append("`");
 
 		for (char ch = 'a'; ch <= 'z'; ++ch)
 			tmp.append(ch);

@@ -52,7 +52,7 @@ public class ContactHelper extends HelperBase {
 	}
 
 	public void initEditContact(int index) {
-		click(By.xpath("(//img[@alt='Edit'])[" + (index +1) + "]"));
+		click(By.xpath("(//img[@alt='Edit'])[" + (index + 1) + "]"));
 
 	}
 
@@ -75,35 +75,56 @@ public class ContactHelper extends HelperBase {
 		click(By.name("modifiy"));
 	}
 
+	public List<WebElement> getContactRows() {
+
+		List<WebElement> rows = driver.findElements(By.xpath(".//tr"));
+		int i = rows.size() - 1;
+
+		rows.remove(i);
+		rows.remove(0);
+
+		return rows;
+	}
+
 	public List<ContactData> getContactsOnPage() {
+		/*
+		 * List<ContactData> contactsOpPage = new ArrayList<ContactData>();
+		 * 
+		 * List<WebElement> edits = driver.findElements(By
+		 * .xpath("//img[@alt='Edit']"));
+		 * 
+		 * int size = edits.size();
+		 * 
+		 * for (int index = 0; index < size; index++) { initEditContact(index);
+		 * 
+		 * WebElement contactFirstNameOnPage; WebElement contactLastNameOnPage;
+		 * contactFirstNameOnPage = driver.findElement(By.name("firstname"));
+		 * contactLastNameOnPage = driver.findElement(By.name("lastname"));
+		 * 
+		 * String firstName = contactFirstNameOnPage.getAttribute("value");
+		 * String lastName = contactLastNameOnPage.getAttribute("value");
+		 * 
+		 * ContactData contact = new ContactData(); contact.firstName =
+		 * firstName; contact.lastName = lastName; contactsOpPage.add(contact);
+		 * 
+		 * click(By.linkText("home"));
+		 * 
+		 * }
+		 * 
+		 * return contactsOpPage;
+		 */
+
 		List<ContactData> contactsOpPage = new ArrayList<ContactData>();
-
-		List<WebElement> edits = driver.findElements(By
-				.xpath("//img[@alt='Edit']"));
-
-		int size = edits.size();
-
-		for (int index = 0; index < size; index++) {
-			initEditContact(index);
-
-			WebElement contactFirstNameOnPage;
-			WebElement contactLastNameOnPage;
-			contactFirstNameOnPage = driver.findElement(By.name("firstname"));
-			contactLastNameOnPage = driver.findElement(By.name("lastname"));
-
-			String firstName = contactFirstNameOnPage.getAttribute("value");
-			String lastName = contactLastNameOnPage.getAttribute("value");
-
+		List<WebElement> rows = getContactRows();
+		for (WebElement row : rows) {
 			ContactData contact = new ContactData();
-			contact.firstName = firstName;
-			contact.lastName = lastName;
+			contact.firstName = row.findElement(By.xpath(".//td[2]")).getText();
+			contact.lastName = row.findElement(By.xpath(".//td[3]")).getText();
 			contactsOpPage.add(contact);
-
-			click(By.linkText("home"));
-
 		}
 
 		return contactsOpPage;
+
 	}
 
 }
