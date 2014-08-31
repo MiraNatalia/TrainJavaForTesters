@@ -12,11 +12,9 @@ public class ContactRemovalTest extends TestBase {
 
 	@Test
 	public void deleteSomeContact() {
-
-		app.getNavigationHelper().openMainPage();
-
+		
 		// save before test state
-		List<ContactData> oldContacts = app.getContactHelper().getContactsOnPage();
+		List<ContactData> oldContacts = app.getContactHelper().getContactsOnMainPage();
 		Random rnd = new Random();
 
 		int oldContactsQuantity = oldContacts.size() - 1;
@@ -24,10 +22,9 @@ public class ContactRemovalTest extends TestBase {
 
 		// actions
 		app.getContactHelper().deleteContact(nextInt);
-		app.getContactHelper().returnToHomePage();
 
 		// save after test state
-		List<ContactData> newContacts = app.getContactHelper().getContactsOnPage();
+		List<ContactData> newContacts = app.getContactHelper().getContactsOnMainPage();
 
 		// compare before and after test contact lists
 		oldContacts.remove(nextInt);

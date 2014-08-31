@@ -19,6 +19,7 @@ public class ApplicationManager {
 		driver = new FirefoxDriver();
 		baseUrl = "http://localhost/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get(baseUrl + "/addressbookv4.1.4/");
 
 	}
 
@@ -28,7 +29,7 @@ public class ApplicationManager {
 	}
 
 	//lazy initialization - App. Manager creates Navigation Helper for himself and sends him a reference on himself
-	public NavigationHelper getNavigationHelper() {
+	public NavigationHelper navigateTo() {
 		if (navigationHelper == null) {
 			navigationHelper = new NavigationHelper(this);
 		}

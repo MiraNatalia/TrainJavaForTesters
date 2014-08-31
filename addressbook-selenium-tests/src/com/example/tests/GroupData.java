@@ -2,9 +2,9 @@ package com.example.tests;
 
 //GroupData class has to implement all methods from Comparable Interface which is only <<public int compareTo(T o);>>
 public class GroupData implements Comparable<GroupData> {
-	public String name;
-	public String header;
-	public String footer;
+	private String name;
+	private String header;
+	private String footer;
 
 	public GroupData(String groupname, String header, String footer) {
 		this.name = groupname;
@@ -18,8 +18,7 @@ public class GroupData implements Comparable<GroupData> {
 
 	@Override
 	public String toString() {
-		return "GroupData [name=" + name + ", header=" + header + ", footer="
-				+ footer + "]";
+		return "GroupData [name=" + name + ", header=" + header + ", footer=" + footer + "]";
 	}
 
 	@Override
@@ -57,4 +56,37 @@ public class GroupData implements Comparable<GroupData> {
 	public int compareTo(GroupData another) {
 		return this.name.toLowerCase().compareTo(another.name.toLowerCase());
 	}
+
+	// GroupData instance which calls "withName" method sets name parameter and
+	// return reference to itself
+	public GroupData withName(String name) {
+		this.name = name;
+		return this;
+	}
+
+	public GroupData withHeader(String header) {
+		this.header = header;
+		return this;
+	}
+
+	public GroupData withFooter(String footer) {
+		this.footer = footer;
+		return this;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getHeader() {
+		return header;
+	}
+
+	public String getFooter() {
+		return footer;
+	}
+
+
+
+
 }

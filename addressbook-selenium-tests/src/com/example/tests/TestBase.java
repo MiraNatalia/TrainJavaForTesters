@@ -38,11 +38,7 @@ public class TestBase {
 		List<Object[]> list = new ArrayList<Object[]>();
 
 		for (int i = 0; i < 5; i++) {
-			GroupData group = new GroupData();
-
-			group.name = generateRandomString();
-			group.header = generateRandomString();
-			group.footer = generateRandomString();
+			GroupData group = new GroupData().withName(generateRandomString()).withHeader(generateRandomString()).withFooter(generateRandomString());
 
 			// we need to initiate each massive of Objects in the List
 			list.add(new Object[] { group });
@@ -77,9 +73,8 @@ public class TestBase {
 
 	public String generateRandomMonth() {
 		Random rnd = new Random();
-		String[] months = new String[] { "January", "February", "March",
-				"April", "May", "June", "July", "August", "September",
-				"October", "November", "December", "-" };
+		String[] months = new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+				"November", "December", "-" };
 
 		return months[rnd.nextInt(12)];
 
@@ -91,23 +86,18 @@ public class TestBase {
 		List<Object[]> list = new ArrayList<Object[]>();
 
 		for (int i = 0; i < 2; i++) {
-			ContactData contact = new ContactData();
-
-			contact.firstName = generateRandomString();
-			contact.lastName = generateRandomString();
-			contact.email1 = generateValidRandomEmail(25);
-			contact.email2 = generateValidRandomEmail(30);
-			contact.address = generateRandomString(20) + ", "
-					+ generateRandomString(10) + ", " + generateRandomString(5);
-			contact.address2 = generateRandomString(20) + ", "
-					+ generateRandomString(10) + ", " + generateRandomString(5);
-			contact.homePhone = generateRandomPhone();
-			contact.mobilePhone2 = generateRandomPhone();
-			contact.mobilePhone = generateRandomPhone();
-			contact.workPhone = generateRandomPhone();
-			contact.birthYYYY = generateRandomBirthDayandYear(2014);
-			contact.birthMM = generateRandomMonth();
-			contact.birthDD = generateRandomBirthDayandYear(31);
+			ContactData contact = new ContactData()
+					.withFirstName(generateRandomString())
+					.withLastName(generateRandomString())
+					.withEmail1(generateValidRandomEmail(25))
+					.withEmail2(generateValidRandomEmail(30))
+					.withAddress(generateRandomString(20) + ", " + generateRandomString(10) + ", " + generateRandomString(5))
+					.withAddress2(generateRandomString(20) + ", " + generateRandomString(10) + ", " + generateRandomString(5))
+					.withHomePhone(generateRandomPhone())
+					.withMobilePhone2(generateRandomPhone())
+					.withMobilePhone(generateRandomPhone())
+					.withWorkPhone(generateRandomPhone())
+					.withBirthYYY(generateRandomBirthDayandYear(2014)).withBirthMM(generateRandomMonth()).withBirthDD(generateRandomBirthDayandYear(31));
 
 			// we need to initiate each massive of Objects in the List
 			list.add(new Object[] { contact });
