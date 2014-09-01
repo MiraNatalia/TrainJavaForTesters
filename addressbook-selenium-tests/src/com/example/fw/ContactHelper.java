@@ -1,15 +1,12 @@
 package com.example.fw;
 
-import static com.example.fw.ContactHelper.CREATION;
-import static com.example.fw.ContactHelper.MODIFICATION;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.example.tests.ContactData;
+import com.example.utils.SortedListOf;
 
 public class ContactHelper extends HelperBase {
 
@@ -22,9 +19,9 @@ public class ContactHelper extends HelperBase {
 
 	/* HIGHT LEVEL METHODS */
 
-	private List<ContactData> cashedContactsOpPage;
+	private SortedListOf<ContactData> cashedContactsOpPage;
 
-	public List<ContactData> getContactsOnMainPage() {
+	public SortedListOf<ContactData> getContactsOnMainPage() {
 
 		if (cashedContactsOpPage == null) {
 			rebuildCashe();
@@ -34,8 +31,8 @@ public class ContactHelper extends HelperBase {
 
 	}
 
-	private List<ContactData> rebuildCashe() {
-		List<ContactData> cashedContactsOpPage = new ArrayList<ContactData>();
+	private SortedListOf<ContactData> rebuildCashe() {
+		cashedContactsOpPage = new SortedListOf<ContactData>();
 		myManager.navigateTo().mainPage();
 		List<WebElement> rows = getContactRows();
 		for (WebElement row : rows) {

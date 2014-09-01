@@ -1,25 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="39113" started-at="2014-08-31T17:52:57Z" finished-at="2014-08-31T17:53:36Z">
+  <suite name="Default suite" duration-ms="72043" started-at="2014-09-01T19:02:59Z" finished-at="2014-09-01T19:04:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="39113" started-at="2014-08-31T17:52:57Z" finished-at="2014-08-31T17:53:36Z">
-      <class name="com.example.tests.GroupRemovalTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.GroupRemovalTests@c38a936]" name="setUp" is-config="true" duration-ms="7322" started-at="2014-08-31T20:52:57Z" finished-at="2014-08-31T20:53:04Z">
+    <test name="Default test" duration-ms="72043" started-at="2014-09-01T19:02:59Z" finished-at="2014-09-01T19:04:11Z">
+      <class name="com.example.tests.ContactModificationTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.ContactModificationTest@127bf607]" name="setUp" is-config="true" duration-ms="7809" started-at="2014-09-01T22:02:59Z" finished-at="2014-09-01T22:03:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="deleteSomeGroup()[pri:0, instance:com.example.tests.GroupRemovalTests@c38a936]" name="deleteSomeGroup" duration-ms="31469" started-at="2014-08-31T20:53:04Z" finished-at="2014-08-31T20:53:36Z">
+        <test-method status="FAIL" signature="modifySomeContactViaEdit(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactModificationTest@127bf607]" name="modifySomeContactViaEdit" duration-ms="33113" started-at="2014-09-01T22:03:07Z" data-provider="randomValidContactGenerator" finished-at="2014-09-01T22:03:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ContactData [firstName=testName-2026917084ofyogqzfzwiaedxumphb, lastName=testName1117551174qclqwxplwfsuqpfgtksd]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: <[ContactData [firstName=, lastName=testName2064121233srkanqjwuqlceecqjdwa], ContactData [firstName=Mazgalin, lastName=Dmitry], ContactData [firstName=Mazgalina, lastName=Natalia], ContactData [firstName=testName-1646201247mxyaokujheudkcivegda, lastName=testName-1447124985shfnoqzqampnmwbgmdsl], ContactData [firstName=testName-2026917084ofyogqzfzwiaedxumphb, lastName=testName1117551174qclqwxplwfsuqpfgtksd]]]]><![CDATA[>
+     but: was <[ContactData [firstName=, lastName=testName2064121233srkanqjwuqlceecqjdwa], ContactData [firstName=Mazgalin, lastName=Dmitry], ContactData [firstName=Mazgalina, lastName=Natalia], ContactData [firstName=testName-1646201247mxyaokujheudkcivegda, lastName=testName-1447124985shfnoqzqampnmwbgmdsl], ContactData [firstName=testName1117551174qclqwxplwfsuqpfgtksd, lastName=testName-2026917084ofyogqzfzwiaedxumphb]]><![CDATA[]]]]><![CDATA[>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: <[ContactData [firstName=, lastName=testName2064121233srkanqjwuqlceecqjdwa], ContactData [firstName=Mazgalin, lastName=Dmitry], ContactData [firstName=Mazgalina, lastName=Natalia], ContactData [firstName=testName-1646201247mxyaokujheudkcivegda, lastName=testName-1447124985shfnoqzqampnmwbgmdsl], ContactData [firstName=testName-2026917084ofyogqzfzwiaedxumphb, lastName=testName1117551174qclqwxplwfsuqpfgtksd]]]]><![CDATA[>
+     but: was <[ContactData [firstName=, lastName=testName2064121233srkanqjwuqlceecqjdwa], ContactData [firstName=Mazgalin, lastName=Dmitry], ContactData [firstName=Mazgalina, lastName=Natalia], ContactData [firstName=testName-1646201247mxyaokujheudkcivegda, lastName=testName-1447124985shfnoqzqampnmwbgmdsl], ContactData [firstName=testName1117551174qclqwxplwfsuqpfgtksd, lastName=testName-2026917084ofyogqzfzwiaedxumphb]]]]><![CDATA[>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at com.example.tests.ContactModificationTest.modifySomeContactViaEdit(ContactModificationTest.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteSomeGroup -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.GroupRemovalTests@c38a936]" name="tearDown" is-config="true" duration-ms="308" started-at="2014-08-31T20:53:36Z" finished-at="2014-08-31T20:53:36Z">
+        </test-method> <!-- modifySomeContactViaEdit -->
+        <test-method status="FAIL" signature="modifySomeContactViaEdit(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactModificationTest@127bf607]" name="modifySomeContactViaEdit" duration-ms="30775" started-at="2014-09-01T22:03:40Z" data-provider="randomValidContactGenerator" finished-at="2014-09-01T22:04:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ContactData [firstName=testName-702654076akbfgtdfqncrnygmllaq, lastName=testName-1512884930nshobnygifpushqickid]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Cannot locate element with text: 0
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.42.2', revision: '6a6995d', time: '2014-06-03 17:42:03'
+System info: host: 'Mira-PC', ip: '192.168.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_60'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 0
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.42.2', revision: '6a6995d', time: '2014-06-03 17:42:03'
+System info: host: 'Mira-PC', ip: '192.168.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_60'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at com.example.fw.HelperBase.select(HelperBase.java:74)
+	at com.example.fw.ContactHelper.fillContactForm(ContactHelper.java:108)
+	at com.example.fw.ContactHelper.modifyContact(ContactHelper.java:62)
+	at com.example.tests.ContactModificationTest.modifySomeContactViaEdit(ContactModificationTest.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- modifySomeContactViaEdit -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.ContactModificationTest@127bf607]" name="tearDown" is-config="true" duration-ms="169" started-at="2014-09-01T22:04:11Z" finished-at="2014-09-01T22:04:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.example.tests.GroupRemovalTests -->
+      </class> <!-- com.example.tests.ContactModificationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

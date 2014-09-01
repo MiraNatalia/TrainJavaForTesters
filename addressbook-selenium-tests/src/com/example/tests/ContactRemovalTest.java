@@ -1,12 +1,13 @@
 package com.example.tests;
 
-import static org.testng.Assert.assertEquals;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 import org.testng.annotations.Test;
+
+import com.example.utils.SortedListOf;
 
 public class ContactRemovalTest extends TestBase {
 
@@ -14,7 +15,7 @@ public class ContactRemovalTest extends TestBase {
 	public void deleteSomeContact() {
 		
 		// save before test state
-		List<ContactData> oldContacts = app.getContactHelper().getContactsOnMainPage();
+		SortedListOf<ContactData> oldContacts = app.getContactHelper().getContactsOnMainPage();
 		Random rnd = new Random();
 
 		int oldContactsQuantity = oldContacts.size() - 1;
@@ -24,13 +25,10 @@ public class ContactRemovalTest extends TestBase {
 		app.getContactHelper().deleteContact(nextInt);
 
 		// save after test state
-		List<ContactData> newContacts = app.getContactHelper().getContactsOnMainPage();
+		SortedListOf<ContactData> newContacts = app.getContactHelper().getContactsOnMainPage();
 
 		// compare before and after test contact lists
-		oldContacts.remove(nextInt);
-		Collections.sort(oldContacts);
-		Collections.sort(newContacts);
-		assertEquals(newContacts, oldContacts);
+		assertThat(newContacts, equalTo(oldContacts.without(nextInt)));
 
 	}
 }
