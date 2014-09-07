@@ -34,12 +34,14 @@ public class NavigationHelper extends HelperBase {
 	}
 
 	private boolean onGroupsPage() {
-		String currentUrl = driver.getCurrentUrl();
-		List<WebElement> buttonsNewGroup = driver.findElements(By.name("new"));
-		if (currentUrl.contains("group.php") && buttonsNewGroup.size() > 0) {
-			return true;
-		}
-		return false;
-	}
+		  String currentUrl = driver.getCurrentUrl();
+		  if(currentUrl.contains("group.php")) {
+		   List<WebElement> buttonsNewGroup = driver.findElements(By.name("new"));
+		   if(buttonsNewGroup.size() > 0) {
+		    return true;
+		   }
+		  }
+		  return false;
+		 }
 
 }

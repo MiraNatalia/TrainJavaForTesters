@@ -17,7 +17,7 @@ public class TestBase {
 
 	// TestBase hires Application Manager; protected as all TestBase descendants
 	// should be able to use it
-	protected ApplicationManager app;
+	protected static ApplicationManager app;
 
 	@BeforeTest
 	public void setUp() throws Exception {
@@ -37,7 +37,7 @@ public class TestBase {
 
 		List<Object[]> list = new ArrayList<Object[]>();
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 2; i++) {
 			GroupData group = new GroupData().withName(generateRandomString()).withHeader(generateRandomString()).withFooter(generateRandomString());
 
 			// we need to initiate each massive of Objects in the List
