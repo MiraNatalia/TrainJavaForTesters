@@ -1,15 +1,12 @@
 package com.example.tests;
 
-import static com.example.tests.GroupDataGenerator.loadGroupsFromCsvFile;
 import static com.example.tests.GroupDataGenerator.loadGroupsFromXmlFile;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -22,8 +19,6 @@ public class GroupCreationTests extends TestBase {
 	public Iterator<Object[]> groupsFromFile() throws IOException {
 		return wrapGroupsForDataProvider(loadGroupsFromXmlFile(new File ("groups.xml"))).iterator();
 	}
-
-
 	// v1. test method will receive test data out of an external method(randomValidGroupGenerator)
 	// v2. test method will receive test data out of an external file (groupsFromFile)	
 	@Test(dataProvider = "groupsFromFile")

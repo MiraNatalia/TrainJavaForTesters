@@ -1,46 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10328" started-at="2014-09-08T12:58:03Z" finished-at="2014-09-08T12:58:13Z">
+  <suite name="Default suite" duration-ms="11448" started-at="2014-09-08T17:23:46Z" finished-at="2014-09-08T17:23:58Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10328" started-at="2014-09-08T12:58:03Z" finished-at="2014-09-08T12:58:13Z">
-      <class name="com.example.tests.GroupCreationTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.GroupCreationTests@4b706125]" name="setUp" is-config="true" duration-ms="6958" started-at="2014-09-08T15:58:03Z" finished-at="2014-09-08T15:58:10Z">
+    <test name="Default test" duration-ms="11448" started-at="2014-09-08T17:23:46Z" finished-at="2014-09-08T17:23:58Z">
+      <class name="com.example.tests.ContactCreationTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.ContactCreationTest@4c64881d]" name="setUp" is-config="true" duration-ms="6648" started-at="2014-09-08T20:23:46Z" finished-at="2014-09-08T20:23:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@4b706125]" name="testGroupCreationWithValidData" duration-ms="2096" started-at="2014-09-08T15:58:10Z" data-provider="groupsFromFile" finished-at="2014-09-08T15:58:12Z">
+        <test-method status="FAIL" signature="testNonEmptyContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTest@4c64881d]" name="testNonEmptyContactCreation" duration-ms="2624" started-at="2014-09-08T20:23:53Z" data-provider="contactsFromFile" finished-at="2014-09-08T20:23:56Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [name=testName1438097809zijmmhizozakiecwtvof, header=testName13
-41734310hnc
-iaeudumcwhj
-ejezgi, footer=testName-1581258553kpixsteyxhlloykxzzkv]]]>
+                <![CDATA[ContactData [firstName=testName1513875977fhsglxxiwlnvcrrnwpwd, lastName=testName1133716067syjvpmboptmgxnfamfkw]]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: <[ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1513875977fhsglxxiwlnvcrrnwpwd, lastName=testName1133716067syjvpmboptmgxnfamfkw], ContactData [firstName=testName967995634kwtbxaybgpysldozllfb, lastName=]]]]><![CDATA[>
+     but: was <[ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName967995634kwtbxaybgpysldozllfb, lastName=]]><![CDATA[]]]]><![CDATA[>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: <[ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1513875977fhsglxxiwlnvcrrnwpwd, lastName=testName1133716067syjvpmboptmgxnfamfkw], ContactData [firstName=testName967995634kwtbxaybgpysldozllfb, lastName=]]]]><![CDATA[>
+     but: was <[ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName967995634kwtbxaybgpysldozllfb, lastName=]]]]><![CDATA[>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at com.example.tests.ContactCreationTest.testNonEmptyContactCreation(ContactCreationTest.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@4b706125]" name="testGroupCreationWithValidData" duration-ms="994" started-at="2014-09-08T15:58:12Z" data-provider="groupsFromFile" finished-at="2014-09-08T15:58:13Z">
+        </test-method> <!-- testNonEmptyContactCreation -->
+        <test-method status="FAIL" signature="testNonEmptyContactCreation(com.example.tests.ContactData)[pri:0, instance:com.example.tests.ContactCreationTest@4c64881d]" name="testNonEmptyContactCreation" duration-ms="1886" started-at="2014-09-08T20:23:56Z" data-provider="contactsFromFile" finished-at="2014-09-08T20:23:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [name=testName475100962mglwidamrjoeubpjtyxv, header=testName-1891924441flqllbutfghhycepmuoi, footer=testName246165006uibjzxzzghcownngjoya]]]>
+                <![CDATA[ContactData [firstName=testName1904302567lcxrcckkyzigikuemqix, lastName=]]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expected: <[ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1904302567lcxrcckkyzigikuemqix, lastName=], ContactData [firstName=testName967995634kwtbxaybgpysldozllfb, lastName=]]]]><![CDATA[>
+     but: was <[ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName967995634kwtbxaybgpysldozllfb, lastName=]]><![CDATA[]]]]><![CDATA[>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expected: <[ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1904302567lcxrcckkyzigikuemqix, lastName=], ContactData [firstName=testName967995634kwtbxaybgpysldozllfb, lastName=]]]]><![CDATA[>
+     but: was <[ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=, lastName=testName1904302567lcxrcckkyzigikuemqix], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName1133716067syjvpmboptmgxnfamfkw, lastName=testName1513875977fhsglxxiwlnvcrrnwpwd], ContactData [firstName=testName967995634kwtbxaybgpysldozllfb, lastName=]]]]><![CDATA[>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at com.example.tests.ContactCreationTest.testNonEmptyContactCreation(ContactCreationTest.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.GroupCreationTests@4b706125]" name="tearDown" is-config="true" duration-ms="106" started-at="2014-09-08T15:58:13Z" finished-at="2014-09-08T15:58:13Z">
+        </test-method> <!-- testNonEmptyContactCreation -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.ContactCreationTest@4c64881d]" name="tearDown" is-config="true" duration-ms="108" started-at="2014-09-08T20:23:57Z" finished-at="2014-09-08T20:23:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.example.tests.GroupCreationTests -->
+      </class> <!-- com.example.tests.ContactCreationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

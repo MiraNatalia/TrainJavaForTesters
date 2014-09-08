@@ -1,19 +1,17 @@
 package com.example.tests;
 
+import static com.example.tests.ContactDataGenerator.generateRandomContacts;
 import static com.example.tests.GroupDataGenerator.generateRandomGroups;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 
 import com.example.fw.ApplicationManager;
-import com.example.utils.RandomEmail;
-import com.example.utils.RandomString;
 
 public class TestBase {
 
@@ -47,70 +45,19 @@ public class TestBase {
 		return list;
 	}
 
-	public String generateRandomPhone() {
-		Random rnd = new Random();
-		if (rnd.nextInt(5) == 0) {
-			return "";
-		} else {
+	@DataProvider
+	public Iterator<Object[]> randomValidContactGenerator() {
 
-			return "+ (" + rnd.nextInt(10) + ")" + rnd.nextInt();
+		return wrapContactsForDataProvider(generateRandomContacts(2)).iterator();
+
+	}
+
+	public static List<Object[]> wrapContactsForDataProvider(List<ContactData> contacts) {
+		List<Object[]> list = new ArrayList<Object[]>();
+		for (ContactData contact : contacts) {
+			list.add(new Object[] { contact });
 		}
-
-	}
-
-	public String generateRandomMonth() {
-		Random rnd = new Random();
-		String[] months = new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
-				"November", "December", "-" };
-
-		return months[rnd.nextInt(12)];
-
-	}
-
-//	@DataProvider
-//	public Iterator<Object[]> randomValidContactGenerator() {
-//
-//		List<Object[]> list = new ArrayList<Object[]>();
-//
-//		for (int i = 0; i < 2; i++) {
-//			ContactData contact = new ContactData().withFirstName(generateRandomString()).withLastName(generateRandomString())
-//					.withEmail1(generateValidRandomEmail(25)).withEmail2(generateValidRandomEmail(30))
-//					.withAddress(generateRandomString(20) + ", " + generateRandomString(10) + ", " + generateRandomString(5))
-//					.withAddress2(generateRandomString(20) + ", " + generateRandomString(10) + ", " + generateRandomString(5))
-//					.withHomePhone(generateRandomPhone()).withMobilePhone2(generateRandomPhone()).withMobilePhone(generateRandomPhone())
-//					.withWorkPhone(generateRandomPhone()).withBirthYYY(generateRandomBirthDayandYear(2014)).withBirthMM(generateRandomMonth())
-//					.withBirthDD(generateRandomBirthDayandYear(31));
-//
-//			// we need to initiate each massive of Objects in the List
-//			list.add(new Object[] { contact });
-//
-//		}
-//
-//		return list.iterator();
-//	}
-
-	private String generateRandomBirthDayandYear(int i) {
-		Random rnd = new Random();
-		return "" + rnd.nextInt(i);
-
-	}
-
-	private String generateRandomString(int i) {
-		Random rnd = new Random();
-		RandomString rndStr = new RandomString(i);
-		if (rnd.nextInt(5) == 0) {
-			return "";
-		} else {
-
-			return "testName" + rnd.nextInt(i) + rndStr.nextString();
-		}
-
-	}
-
-	private String generateValidRandomEmail(int i) {
-		RandomEmail rndStr = new RandomEmail(i);
-		return rndStr.nextEmail();
-
+		return list;
 	}
 
 }

@@ -2,23 +2,16 @@ package com.example.tests;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import com.example.utils.RandomString;
 import com.thoughtworks.xstream.XStream;
 
-public class GroupDataGenerator {
+public class GroupDataGenerator extends TestDataGeneratorBase {
 
-	/**
-	 * @param args
-	 * @throws IOException
-	 */
 	public static void main(String[] args) throws IOException {
 		if (args.length < 3) {
 			System.out.println("Please specify parametrs: <amount of test data> <file> <format>");
@@ -75,18 +68,6 @@ public class GroupDataGenerator {
 		}
 
 		return list;
-	}
-
-	private static String generateRandomString() {
-		Random rnd = new Random();
-		RandomString rndStr = new RandomString(20);
-		if (rnd.nextInt(5) == 0) {
-			return "";
-		} else {
-
-			return "testName" + rnd.nextInt() + rndStr.nextString();
-		}
-
 	}
 
 	public static List<GroupData> loadGroupsFromCsvFile(File file) throws IOException {
