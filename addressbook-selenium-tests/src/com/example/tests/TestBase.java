@@ -1,5 +1,7 @@
 package com.example.tests;
 
+import static com.example.tests.GroupDataGenerator.generateRandomGroups;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -34,30 +36,15 @@ public class TestBase {
 	// Iterator is used to iterate over a collection
 	@DataProvider
 	public Iterator<Object[]> randomValidGroupGenerator() {
-
-		List<Object[]> list = new ArrayList<Object[]>();
-
-		for (int i = 0; i < 2; i++) {
-			GroupData group = new GroupData().withName(generateRandomString()).withHeader(generateRandomString()).withFooter(generateRandomString());
-
-			// we need to initiate each massive of Objects in the List
-			list.add(new Object[] { group });
-
-		}
-
-		return list.iterator();
+		return wrapGroupsForDataProvider(generateRandomGroups(5)).iterator();
 	}
 
-	public String generateRandomString() {
-		Random rnd = new Random();
-		RandomString rndStr = new RandomString(20);
-		if (rnd.nextInt(5) == 0) {
-			return "";
-		} else {
-
-			return "testName" + rnd.nextInt() + rndStr.nextString();
+	public static List<Object[]> wrapGroupsForDataProvider(List<GroupData> groups) {
+		List<Object[]> list = new ArrayList<Object[]>();
+		for (GroupData group : groups) {
+			list.add(new Object[] { group });
 		}
-
+		return list;
 	}
 
 	public String generateRandomPhone() {
@@ -80,32 +67,27 @@ public class TestBase {
 
 	}
 
-	@DataProvider
-	public Iterator<Object[]> randomValidContactGenerator() {
-
-		List<Object[]> list = new ArrayList<Object[]>();
-
-		for (int i = 0; i < 2; i++) {
-			ContactData contact = new ContactData()
-					.withFirstName(generateRandomString())
-					.withLastName(generateRandomString())
-					.withEmail1(generateValidRandomEmail(25))
-					.withEmail2(generateValidRandomEmail(30))
-					.withAddress(generateRandomString(20) + ", " + generateRandomString(10) + ", " + generateRandomString(5))
-					.withAddress2(generateRandomString(20) + ", " + generateRandomString(10) + ", " + generateRandomString(5))
-					.withHomePhone(generateRandomPhone())
-					.withMobilePhone2(generateRandomPhone())
-					.withMobilePhone(generateRandomPhone())
-					.withWorkPhone(generateRandomPhone())
-					.withBirthYYY(generateRandomBirthDayandYear(2014)).withBirthMM(generateRandomMonth()).withBirthDD(generateRandomBirthDayandYear(31));
-
-			// we need to initiate each massive of Objects in the List
-			list.add(new Object[] { contact });
-
-		}
-
-		return list.iterator();
-	}
+//	@DataProvider
+//	public Iterator<Object[]> randomValidContactGenerator() {
+//
+//		List<Object[]> list = new ArrayList<Object[]>();
+//
+//		for (int i = 0; i < 2; i++) {
+//			ContactData contact = new ContactData().withFirstName(generateRandomString()).withLastName(generateRandomString())
+//					.withEmail1(generateValidRandomEmail(25)).withEmail2(generateValidRandomEmail(30))
+//					.withAddress(generateRandomString(20) + ", " + generateRandomString(10) + ", " + generateRandomString(5))
+//					.withAddress2(generateRandomString(20) + ", " + generateRandomString(10) + ", " + generateRandomString(5))
+//					.withHomePhone(generateRandomPhone()).withMobilePhone2(generateRandomPhone()).withMobilePhone(generateRandomPhone())
+//					.withWorkPhone(generateRandomPhone()).withBirthYYY(generateRandomBirthDayandYear(2014)).withBirthMM(generateRandomMonth())
+//					.withBirthDD(generateRandomBirthDayandYear(31));
+//
+//			// we need to initiate each massive of Objects in the List
+//			list.add(new Object[] { contact });
+//
+//		}
+//
+//		return list.iterator();
+//	}
 
 	private String generateRandomBirthDayandYear(int i) {
 		Random rnd = new Random();
