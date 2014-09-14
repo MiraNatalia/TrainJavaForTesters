@@ -19,7 +19,7 @@ public class ContactCreationTest extends TestBase {
 
 	@DataProvider
 	public Iterator<Object[]> contactsFromFile() throws IOException {
-		return wrapContactsForDataProvider(loadContactsFromXmlFile(new File("contacts.xml"))).iterator();
+		return wrapContactsForDataProvider(loadContactsFromCsvFile(new File("contacts.txt"))).iterator();
 	}
 
 // v1. test method can receive test data out of an external method(randomValidContactGenerator)
