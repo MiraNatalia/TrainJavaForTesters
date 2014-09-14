@@ -14,20 +14,20 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 
-import com.example.fw.ApplicationManager;
+import com.example.fw.ApplicationManager1;
 
 public class TestBase {
 
 	// TestBase hires Application Manager; protected as all TestBase descendants
 	// should be able to use it
-	protected static ApplicationManager app;
+	protected static ApplicationManager1 app;
 
 	@BeforeTest
-	public void setUp () throws Exception {
+	public void setUp() throws Exception {
 	String configFile = System.getProperty("configFile","application.properties");
 	Properties properties = new Properties();
 	properties.load(new FileReader(new File(configFile)));
-		app = new ApplicationManager(properties);
+		app = new ApplicationManager1(properties);
 	}
 
 	@AfterTest
