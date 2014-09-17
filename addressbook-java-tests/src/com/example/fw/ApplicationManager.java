@@ -1,68 +1,73 @@
 package com.example.fw;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.netbeans.jemmy.ClassReference;
+import org.netbeans.jemmy.operators.JFrameOperator;
 
 public class ApplicationManager {
 
-	public WebDriver driver;
-	public String baseUrl;
-
-	// hires helpers
-	private NavigationHelper navigationHelper;
-	private GroupHelper groupHelper;
-	private ContactHelper contactHelper;
+	// pattern singleton when we need only one instance of ApplicationManager
+	private static ApplicationManager singleton;
 	private Properties properties;
+	private FolderHelper folderHelper;
+	private JFrameOperator mainFrame;
 
-	public ApplicationManager(Properties properties) {
+	public static ApplicationManager getInstance() {
+		if (singleton == null) {
+			singleton = new ApplicationManager();
+		}
+		return singleton;
+	}
 
-		this.properties = properties;
-		String browser = properties.getProperty("browser");
-		if ("firefox".equals(browser)) {
-			driver = new FirefoxDriver();
-		} else if ("ie".equals(browser)) {
-			driver = new InternetExplorerDriver();
-		} else
-			throw new Error("Unsupported browser");
-
-		baseUrl = properties.getProperty("baseUrl");
-		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(baseUrl);
+	public ApplicationManager() {
 
 	}
 
 	public void stop() {
-		driver.quit();
 
 	}
 
-	// lazy initialization - App. Manager creates Navigation Helper for himself
-	// and sends him a reference on himself
-	public NavigationHelper navigateTo() {
-		if (navigationHelper == null) {
-			navigationHelper = new NavigationHelper(this);
+	public void setProperties(Properties vProperies) {
+		this.properties = vProperies;
+
+	}
+
+	public String getProperties(String key) {
+		return properties.getProperty(key);
+	}
+
+	public String getProperties(String key, String defaulfValue) {
+		return properties.getProperty(key, defaulfValue);
+	}
+
+	public FolderHelper getFolderHelper() {
+		if (folderHelper == null) {
+			folderHelper = new FolderHelper(this);
 		}
 
-		return navigationHelper;
+		return folderHelper;
 	}
 
-	public GroupHelper getGroupHelper() {
-		if (groupHelper == null) {
-			groupHelper = new GroupHelper(this);
+	/* as tests and app are on Java we can run it in the same process => we can
+	/have direct access to app's interface
+	/ driver for interface - Jemmy2*/
+	public JFrameOperator getApplication() {
+
+		if (mainFrame == null) {
+			try {
+				new ClassReference("addressbook.AddressBookFrame").startApplication();
+
+				// JFrameOperator is a wrapper for java Frame which allows to  manipulate it
+				mainFrame = new JFrameOperator("JAddressBook");
+			} catch (InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+
 		}
 
-		return groupHelper;
+		return mainFrame;
+
 	}
-
-	public ContactHelper getContactHelper() {
-		if (contactHelper == null) {
-			contactHelper = new ContactHelper(this);
-		}
-
-		return contactHelper;
-	}
-
 }
