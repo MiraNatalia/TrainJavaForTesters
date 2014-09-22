@@ -41,7 +41,7 @@ public class ContactHelper extends HelperBase {
 	/*-------------------------------------------------*/
 
 	public Contact getFirstContactOnPage() {
-		initAditFirstContact();
+		initEditFirstContact();
 
 		Contact contact = getContactOnPage();
 
@@ -54,7 +54,7 @@ public class ContactHelper extends HelperBase {
 	
 	/*---------------getFirstContactOnPage----------------------------------*/
 	
-	private void initAditFirstContact() {
+	private void initEditFirstContact() {
 		myManager.getAutoItHelper().winWaitAndActivate("AddressBook Portable", "", 5000)
 		.focus("TListView1").send("{DOWN}{SPACE}")
 		.click("Edit")
