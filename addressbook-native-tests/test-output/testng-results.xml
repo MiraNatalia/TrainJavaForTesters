@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="7336" started-at="2014-09-22T19:54:50Z" finished-at="2014-09-22T19:54:57Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="7336" started-at="2014-09-22T19:54:50Z" finished-at="2014-09-22T19:54:57Z">
+      <class name="com.example.tests.TestBase">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.TestBase@70fec508]" name="tearDown" is-config="true" duration-ms="2" started-at="2014-09-22T22:54:57Z" finished-at="2014-09-22T22:54:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.TestBase -->
+      <class name="com.example.tests.TestContactCreation">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.example.tests.TestContactCreation@376e1995]" name="setUp" is-config="true" duration-ms="17" started-at="2014-09-22T22:54:50Z" finished-at="2014-09-22T22:54:50Z">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="shouldCreateContactWithValidData()[pri:0, instance:com.example.tests.TestContactCreation@376e1995]" name="shouldCreateContactWithValidData" duration-ms="7297" started-at="2014-09-22T22:54:50Z" finished-at="2014-09-22T22:54:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldCreateContactWithValidData -->
+      </class> <!-- com.example.tests.TestContactCreation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

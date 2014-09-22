@@ -10,4 +10,4 @@ ps.xml xml
 
 
 
-java -cp bin;C:\Users\Mira\Documents\Distr\xstream-distribution-1.4.7-bin\xstream-1.4.7\lib\xstream-1.4.7.jar;C:\Users\Mira\Documents\Distr\xstream-distribution-1.4.7-bin\xstream-1.4.7\lib\xstream\xpp3_min-1.1.4c.jar;C:\Users\Mira\Documents\Distr\xstream-distribution-1.4.7-bin\xstream-1.4.7\lib\xstream\xmlpull-1.1.3.1.jar;C:\Users\Mira\Documents\Distr\selenium-server-standalone-2.42.2.jar  org.testng.TestNG testng-customsuite.xml
+java -cp bin;C:\Users\Mira\Documents\Distr\xstream-distribution-1.4.7-bin\xstream-1.4.7\lib\xstream-1.4.7.jar;C:\Users\Mira\Documents\Distr\xstream-distribution-1.4.7-bin\xstream-1.4.7\lib\xstream\xpp3_min-1.1.4c.jar;C:\Users\Mira\Documents\Distr\xstream-distribution-1.4.7-bin\xstream-1.4.7\lib\xstream\xmlpull-1.1.3.1.jar;C:\Users\Mira\Documents\Distr\selenium-server-standalone-2.42.2.jar -DconfigFile=ie.properties  org.testng.TestNG testng-customsuite.xml
