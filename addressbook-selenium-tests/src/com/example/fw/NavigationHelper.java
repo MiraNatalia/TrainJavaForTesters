@@ -5,7 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class NavigationHelper extends HelperBase {
+public class NavigationHelper extends WebDriverHelperBase {
 
 	// To create an instance of child class we need to initialize both child and
 	// father=>if father doesn't have default constructor

@@ -71,7 +71,8 @@ public class ContactHelper extends HelperBase {
 	private void clickCancelOnContactPage() {
 		myManager.getAutoItHelper()
 		.click("Cancel")
-		.winWaitAndActivate("AddressBook Portable", "", 5000);
+		.winWaitAndActivate("AddressBook Portable", "", 5000)
+		.click("Exit");
 	}
 	/*-------------------------------------------------*/
 

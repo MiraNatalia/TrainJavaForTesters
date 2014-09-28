@@ -9,7 +9,9 @@ import com.jacob.com.LibraryLoader;
 
 public class AutoItHelper extends HelperBase {
 
-    static {
+    //before HelperBase is created this Static Block will be executed before instance creation
+	static {
+    	//String jacobLib = myManager.getProperties("jacobLib");
         File jacob = new File("C:/Users/Mira/Documents/JavaForTesters/TrainJavaForTesters/addressbook-native-tests/lib/jacob-1.15-M4-x64.dll");
         System.setProperty(LibraryLoader.JACOB_DLL_PATH, jacob.getAbsolutePath());
     }

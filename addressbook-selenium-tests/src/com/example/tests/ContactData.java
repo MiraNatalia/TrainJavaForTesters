@@ -1,6 +1,7 @@
 package com.example.tests;
 
 public class ContactData implements Comparable<ContactData> {
+	private String id;
 	private String firstName;
 	private String lastName;
 	private String address;
@@ -65,7 +66,7 @@ public class ContactData implements Comparable<ContactData> {
 
 	@Override
 	public String toString() {
-		return "ContactData [firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "ContactData [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email1=" + email1 + "]";
 	}
 
 	public ContactData withFirstName(String firstName) {
@@ -189,6 +190,68 @@ public class ContactData implements Comparable<ContactData> {
 		return mobilePhone2;
 	}
 
-	
-	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public void setHomePhone(String homePhone) {
+		this.homePhone = homePhone;
+	}
+
+	public void setMobilePhone(String mobilePhone) {
+		this.mobilePhone = mobilePhone;
+	}
+
+	public void setWorkPhone(String workPhone) {
+		this.workPhone = workPhone;
+	}
+
+	public void setEmail1(String email1) {
+		this.email1 = email1;
+	}
+
+	public void setEmail2(String email2) {
+		this.email2 = email2;
+	}
+
+	public void setBirthDD(String birthDD) {
+		this.birthDD = birthDD;
+	}
+
+	public void setBirthMM(String birthMM) {
+		this.birthMM = birthMM;
+	}
+
+	public void setBirthYYYY(String birthYYYY) {
+		this.birthYYYY = birthYYYY;
+	}
+
+	public void setContactGroup(String contactGroup) {
+		this.contactGroup = contactGroup;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public void setMobilePhone2(String mobilePhone2) {
+		this.mobilePhone2 = mobilePhone2;
+	}
+
 }

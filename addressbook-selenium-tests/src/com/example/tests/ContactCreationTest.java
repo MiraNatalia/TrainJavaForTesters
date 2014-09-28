@@ -28,13 +28,15 @@ public class ContactCreationTest extends TestBase {
 	@Test(dataProvider = "contactsFromFile")
 	public void testNonEmptyContactCreation(ContactData contact) throws Exception {
 		// save before test state
-		SortedListOf<ContactData> oldContacts = app.getContactHelper().getContactsOnMainPage();
+		SortedListOf<ContactData> oldContacts 
+		= new SortedListOf<ContactData>(app.getHibernateHelper().listContacts());
 
 		// actions to create a new contact
 		app.getContactHelper().createContact(contact, CREATION);
 
 		// save after test state
-		SortedListOf<ContactData> newContacts = app.getContactHelper().getContactsOnMainPage();
+		SortedListOf<ContactData> newContacts 
+		= app.getContactHelper().getContactsOnMainPage();
 
 		// compare before and after test contact lists, HamCrest
 		assertThat(newContacts, equalTo(oldContacts.withAdded(contact)));

@@ -23,10 +23,10 @@ public class TestBase {
 	protected static ApplicationManager app;
 
 	@BeforeTest
-	public void setUp () throws Exception {
-	String configFile = System.getProperty("configFile","application.properties");
-	Properties properties = new Properties();
-	properties.load(new FileReader(new File(configFile)));
+	public void setUp() throws Exception {
+		String configFile = System.getProperty("configFile", "application.properties");
+		Properties properties = new Properties();
+		properties.load(new FileReader(new File(configFile)));
 		app = new ApplicationManager(properties);
 	}
 
