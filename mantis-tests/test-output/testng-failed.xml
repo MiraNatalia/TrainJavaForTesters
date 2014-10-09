@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.example.tests.ContactModificationTest">
+      <class name="com.example.tests.SignupTest">
         <methods>
-          <include name="modifySomeContactViaEdit" invocation-numbers="0 1"/>
+          <include name="createUser"/>
           <include name="tearDown"/>
+          <include name="newUserShouldSignup"/>
           <include name="setUp"/>
+          <include name="deleteUser"/>
         </methods>
-      </class> <!-- com.example.tests.ContactModificationTest -->
+      </class> <!-- com.example.tests.SignupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

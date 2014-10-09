@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="39485" started-at="2014-10-08T22:21:25Z" finished-at="2014-10-08T22:22:05Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="39485" started-at="2014-10-08T22:21:25Z" finished-at="2014-10-08T22:22:05Z">
+      <class name="com.example.tests.SignupTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.SignupTest@5f2cfc0f]" name="setUp" is-config="true" duration-ms="10" started-at="2014-10-09T00:21:25Z" finished-at="2014-10-09T00:21:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="createUser()[pri:0, instance:com.example.tests.SignupTest@5f2cfc0f]" name="createUser" is-config="true" duration-ms="4566" started-at="2014-10-09T00:21:25Z" finished-at="2014-10-09T00:21:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUser -->
+        <test-method status="FAIL" signature="newUserShouldSignup()[pri:0, instance:com.example.tests.SignupTest@5f2cfc0f]" name="newUserShouldSignup" duration-ms="31699" started-at="2014-10-09T00:21:30Z" finished-at="2014-10-09T00:22:02Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Exception not expected]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Exception not expected
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.example.tests.SignupTest.newUserShouldSignup(SignupTest.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUserShouldSignup -->
+        <test-method status="PASS" signature="deleteUser()[pri:0, instance:com.example.tests.SignupTest@5f2cfc0f]" name="deleteUser" is-config="true" duration-ms="3039" started-at="2014-10-09T00:22:02Z" finished-at="2014-10-09T00:22:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.SignupTest@5f2cfc0f]" name="tearDown" is-config="true" duration-ms="156" started-at="2014-10-09T00:22:05Z" finished-at="2014-10-09T00:22:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.SignupTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
