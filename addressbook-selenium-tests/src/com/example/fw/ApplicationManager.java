@@ -11,7 +11,6 @@ public class ApplicationManager {
 	private WebDriver driver;
 	public String baseUrl;
 
-	// hires helpers
 	private NavigationHelper navigationHelper;
 	private GroupHelper groupHelper;
 	private ContactHelper contactHelper;
@@ -29,8 +28,6 @@ public class ApplicationManager {
 
 	}
 
-	// lazy initialization - App. Manager creates Navigation Helper for himself
-	// and sends him a reference on himself
 	public NavigationHelper navigateTo() {
 		if (navigationHelper == null) {
 			navigationHelper = new NavigationHelper(this);
@@ -83,7 +80,4 @@ public class ApplicationManager {
 		return hibenateHelper;
 	}
 
-		
-	}
-
-
+}

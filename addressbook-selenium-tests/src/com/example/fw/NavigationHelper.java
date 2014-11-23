@@ -7,10 +7,6 @@ import org.openqa.selenium.WebElement;
 
 public class NavigationHelper extends WebDriverHelperBase {
 
-	// To create an instance of child class we need to initialize both child and
-	// father=>if father doesn't have default constructor
-	// we need to use father's constructor by calling super and transmitting the
-	// constructor parameters
 	public NavigationHelper(ApplicationManager pMyManager) {
 		super(pMyManager);
 		// TODO Auto-generated constructor stub
@@ -23,7 +19,7 @@ public class NavigationHelper extends WebDriverHelperBase {
 	}
 
 	private boolean onMainPage() {
-		return (driver.findElements(By.id("maintable")).size()>0);
+		return (driver.findElements(By.id("maintable")).size() > 0);
 	}
 
 	public void groupsPage() {
@@ -34,14 +30,14 @@ public class NavigationHelper extends WebDriverHelperBase {
 	}
 
 	private boolean onGroupsPage() {
-		  String currentUrl = driver.getCurrentUrl();
-		  if(currentUrl.contains("group.php")) {
-		   List<WebElement> buttonsNewGroup = driver.findElements(By.name("new"));
-		   if(buttonsNewGroup.size() > 0) {
-		    return true;
-		   }
-		  }
-		  return false;
-		 }
+		String currentUrl = driver.getCurrentUrl();
+		if (currentUrl.contains("group.php")) {
+			List<WebElement> buttonsNewGroup = driver.findElements(By.name("new"));
+			if (buttonsNewGroup.size() > 0) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

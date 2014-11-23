@@ -70,10 +70,8 @@ public class ContactHelper extends WebDriverHelperBase {
 	public ContactHelper deleteContact(int index) {
 		myManager.navigateTo().mainPage();
 
-		// click edit pic at home page to initiate contact edition
 		initEditContact(index);
 
-		// xPath for Delete button
 		pushContactDeleteButton();
 
 		returnToHomePage();
@@ -153,10 +151,10 @@ public class ContactHelper extends WebDriverHelperBase {
 		return this;
 	}
 
-//	public ContactHelper initContactModification() {
-//		click(By.name("modifiy"));
-//		return this;
-//	}
+	// public ContactHelper initContactModification() {
+	// click(By.name("modifiy"));
+	// return this;
+	// }
 
 	public List<WebElement> getContactRows() {
 

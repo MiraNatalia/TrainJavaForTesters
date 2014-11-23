@@ -1,4 +1,3 @@
-
 package com.example.fw;
 
 import java.util.List;
@@ -16,8 +15,6 @@ public class GroupHelper extends WebDriverHelperBase {
 	}
 
 	/* HIGH LEVEL METHODS */
-	
-	//Create Cash not to load oldlist of Groups on Page right after previous test, as test1.newlist=test2.oldlist
 
 	private SortedListOf<GroupData> cashedGroupsOnPage;
 
@@ -55,7 +52,7 @@ public class GroupHelper extends WebDriverHelperBase {
 	}
 
 	public GroupHelper modifyGroup(int nextInt, GroupData group) {
-		//myManager.navigateTo().groupsPage();
+		// myManager.navigateTo().groupsPage();
 		initGroupModification(nextInt);
 		fillGroupForm(group);
 		submitGroupModification();
@@ -98,13 +95,6 @@ public class GroupHelper extends WebDriverHelperBase {
 		type(By.name("group_header"), group.getHeader());
 		type(By.name("group_footer"), group.getFooter());
 
-		/*
-		 * InLine - we can use one line syntax for : WebElement webelement =
-		 * driver.findElement(By.name("group_name")); webelement.clear();
-		 * 
-		 * name - static method of BY Object
-		 * driver.findElement(By.name("group_name")).clear();
-		 */
 		return this;
 
 	}

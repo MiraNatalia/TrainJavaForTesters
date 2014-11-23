@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 import com.example.utils.SortedListOf;
 
 public class ContactModificationTest extends TestBase {
-	
+
 	@DataProvider
 	public Iterator<Object[]> contactsFromFile() throws IOException {
 		return wrapContactsForDataProvider(loadContactsFromCsvFile(new File("contacts.txt"))).iterator();
@@ -24,7 +24,7 @@ public class ContactModificationTest extends TestBase {
 
 	@Test(dataProvider = "contactsFromFile")
 	public void modifySomeContactViaEdit(ContactData contact) {
-		
+
 		// save before test state
 		SortedListOf<ContactData> oldContacts = new SortedListOf<ContactData>(app.getHibernateHelper().listContacts());
 		Random rnd = new Random();
@@ -41,14 +41,5 @@ public class ContactModificationTest extends TestBase {
 		assertThat(newContacts, equalTo(oldContacts.without(nextInt).withAdded(contact)));
 
 	}
-	/*
-	 * // @Test // public void modifySomeContactViaDetails() { // //
-	 * app.getNavigationHelper().openMainPage(); //
-	 * app.getContactHelper().initDetailsContact(2); //
-	 * app.getContactHelper().modifyContact(); // // ContactData contact = new
-	 * ContactData(); // contact.firstName = "Natalie"; // //
-	 * app.getContactHelper().fillContactForm(contact); // //
-	 * app.getContactHelper().updateContact(); //
-	 * app.getContactHelper().returnToHomePage(); // // }
-	 */
+
 }

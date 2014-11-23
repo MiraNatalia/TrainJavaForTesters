@@ -18,8 +18,7 @@ import com.example.fw.ApplicationManager;
 
 public class TestBase {
 
-	// TestBase hires Application Manager; protected as all TestBase descendants
-	// should be able to use it
+	// TestBase hires Application Manager
 	protected static ApplicationManager app;
 
 	@BeforeTest
@@ -36,7 +35,6 @@ public class TestBase {
 
 	}
 
-	// Iterator is used to iterate over a collection
 	@DataProvider
 	public Iterator<Object[]> randomValidGroupGenerator() {
 		return wrapGroupsForDataProvider(generateRandomGroups(5)).iterator();
